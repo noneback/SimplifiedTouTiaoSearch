@@ -1,0 +1,40 @@
+.entry {
+  padding: 3px;
+  margin: 3px auto;
+  width: 80%;
+}
+
+.entry a {
+  font-size: 18px;
+}
+
+.entry_url p {
+  color: rgba(8, 2, 2, 0.342);
+}
+
+div {
+  margin: 0px;
+}
+
+a:hover {
+  color: blueviolet;
+}
+a:active {
+  color: blueviolet;
+}
+a:link {
+  color: blue;
+}
+a:checked {
+  color: blueviolet;
+}
+
+#results_container {
+  text-align: left;
+}
+
+#results_container #results_counter {
+  padding: 3px;
+  margin: 3px auto;
+  width: 80%;
+}
