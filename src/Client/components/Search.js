@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 // import '../index.css'
 import { AutoComplete, Input, Button } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
-import services from '../services/Services'
+import services from '../../Services/Services'
 
 const Searchs = ({ input, clicked, keyword, setKeyword }) => {
     const [options, setOptions] = useState([])
@@ -18,7 +18,7 @@ const Searchs = ({ input, clicked, keyword, setKeyword }) => {
     }
 
     const handleKeyPress = ev => {
-        console.log(ev.target.value)
+        // console.log(ev.target.value)
         // sessionStorage.setItem('keyword',ev.target.value)
     }
 

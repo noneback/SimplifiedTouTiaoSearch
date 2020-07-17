@@ -1,31 +1,35 @@
-/* .item-1 {
-  background-color: #ef342a;
+
+#hotspots_container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(8, 12.5%);
+  cursor: pointer;
 }
 
-.item-2 {
-  background-color: #f68f26;
+#hotspots_container h3 {
+  text-align: left;
 }
 
-.item-3 {
-  background-color: #4ba946;
+.hot_value {
+  font-size: 0.7em;
+  padding: 1px 5px 1px 5px;
+  color: gray;
 }
 
-.item-4 {
-  background-color: #0376c2;
+.update_time span {
+  display: block;
+  text-align: right;
 }
 
-.item-5 {
-  background-color: #c077af;
+.hot_top3 {
+  color: red;
+  font-size: 1.6em;
 }
 
-.item-6 {
-  background-color: #f8d29d;
+.hot_rank {
+  font-size: 1.6em;
+  color: rgb(114, 113, 113);
 }
-
-.item-7 {
-  background-color: #b5a87f;
-}
-
-.item-8 {
-  background-color: #d0e4a9;
-} */

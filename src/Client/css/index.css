@@ -6,6 +6,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+footer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+span {
+  margin: 0px;
+  padding: 0px;
+}
+
+body > div p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.entry_url p {
+  color: rgba(8, 2, 2, 0.342);
+}
+
+div {
+  margin: 0px;
+}
+
+/* 搜索框响应式布局 */
 @media (min-width: 1000px) {
   #search_container {
     margin: 0 auto;
@@ -29,15 +58,6 @@ body {
   }
 }
 
-.entry {
-  padding: 3px;
-  margin: 3px auto;
-  width: 80%;
-}
-
-.entry a {
-  font-size: 18px;
-}
 @media (max-width: 1000px) {
   #logo {
     display: block;
@@ -54,56 +74,28 @@ body {
   }
 }
 
-span {
-  margin: 0px;
-  padding: 0px;
-}
 
-body > div p {
-  margin: 0px;
-  padding: 0px;
-}
 
-.entry_url p {
-  color: rgba(8, 2, 2, 0.342);
-}
+/* 首页grid组件布局 */
 
-div {
-  margin: 0px;
-}
-
-a:hover {
-  color: blueviolet;
-}
-a:active {
-  color: blueviolet;
-}
-a:link {
-  color: blue;
-}
-a:checked {
-  color: blueviolet;
-}
-
-.grid_display {
+#SearchSuggestion_container {
   width: 100%;
   margin: 0 auto;
   text-align: center;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(2, 50%);
   grid-template-rows: repeat(5, 20%);
+  cursor: pointer;
 }
+
+.grid_display h3:active {
+  background-color: rgba(47, 37, 23, 0.267);
+}
+
+/* tab */
 .tabs {
   width: 80%;
   margin: 0 auto;
   text-align: center;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
-footer {
-  margin: 0 auto;
-  text-align: center;
-}

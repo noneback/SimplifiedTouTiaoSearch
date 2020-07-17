@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import services from '../services/Services'
+import services from '../../Services/Services'
 import Axios from 'axios'
 // import './searchSuggestion.css'
 
@@ -20,14 +20,11 @@ const SearchSuggestion = () => {
     return (
         <>
             <br></br>
-            <div style={{ width: '60%', textAlign: 'center', margin: '0 auto' }}><h1>猜你想搜</h1></div>
-            <br></br>
             <div id="SearchSuggestion_container" className='grid_display'>
                 {
-
                     searchSuggestion.map(
                         sugWord => {
-                            return <h3 onClick={() => onClick(sugWord)}> {sugWord}</h3>
+                            return <h3 key={sugWord} onClick={() => onClick(sugWord)}> {sugWord}</h3>
                         }
                     )
                 }

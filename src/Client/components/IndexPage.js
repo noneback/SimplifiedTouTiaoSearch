@@ -20,11 +20,14 @@ const IndexPage = ({ input }) => {
 
     return (
         <div>
+        <br></br>
+        <br></br>
+        <br></br>
             <Searchs clicked={clicked} setKeyword={setKeyword} keyword={keyword} input={input}></Searchs>
             {/* <HotSpots></HotSpots> */}
             <div className='tabs'>
                 <Tabs defaultActiveKey="1">
-                    <TabPane tab="今日热搜" key="1">
+                    <TabPane tab="头条热榜" key="1">
                         <HotSpots></HotSpots>
                     </TabPane>
                     <TabPane tab="猜你想搜" key="2">

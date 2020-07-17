@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { Pagination } from 'antd';
 
 import Searchs from './Search';
-import services from '../services/Services'
+import services from '../../Services/Services'
 import SearchResultsDispaly from './SearchResults'
 
 const ResultsPage = ({ keyword_, offset_ }) => {
@@ -16,7 +16,7 @@ const ResultsPage = ({ keyword_, offset_ }) => {
   const initialize = () => {
     services.getEntries(keyword_, offset_)
       .then((result) => {
-        console.log('key-off',keyword_,offset_)
+        // console.log('key-off',keyword_,offset_)
         if (result.data) {
           setResults(result.data)
           setTotal(result.total)

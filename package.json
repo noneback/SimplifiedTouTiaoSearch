@@ -7,9 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode=development && nodemon --exec babel-node src/Server/server.js",
     "webpack": "webpack -wd",
-    "build": "webpack --mode=development"
+    "build": "webpack --mode=development",
+    "analyze": "webpack --config webpack.config.js --progress",
+    "backend": "nodemon --exec babel-node src/Server/server.js"
   },
-  "author": "",
+  "author": "noneback",
   "license": "ISC",
   "dependencies": {
     "antd": "^4.4.2",
@@ -19,6 +21,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "handlebars": "^4.7.6",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -37,6 +40,7 @@
     "isomorphic-style-loader": "^5.1.0",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.12"
   }
 }

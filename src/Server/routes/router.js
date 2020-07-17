@@ -1,6 +1,6 @@
 import express from "express";
 import hbs from "handlebars";
-import searchService from '../services/Search'
+import searchService from '../../Services/Search'
 
 const router = express.Router();
 
@@ -34,14 +34,6 @@ router.get("/test", async (req, res) => {
   res.send(htmlToSend)
 });
 
-// router.get("/result?:keyword", async (req, res) => {
-
-// })
-
-// router.get('/result/keyword=:keyword&offset=:offset',(req,res)=>{
-//   res.json(req.params)
-// })
-// ``
 router.get("/result/keyword=:keyword&offset=:offset", async (req, res) => {
   // keyword=:keyword&offset=:offset
   const keyword = req.params.keyword
@@ -58,6 +50,7 @@ router.get("/result/keyword=:keyword&offset=:offset", async (req, res) => {
     <title>Document</title>
   </head>
   <body>
+
     <div id="container" style="margin:0 auto">{{{reactele}}}</div>
     <script src="/result.js" charset="utf-8"></script>
     <script src="/vendor.js" charset="utf-8"></script>
@@ -99,7 +92,7 @@ router.get('/api/entries/:keyword&:offset', async (req, res) => {
     }).catch(err => console.log('error'))
 })
 
-router.get('/api/hot_spots', async (req, res) => {
+router.get('/api/hot_spots_info', async (req, res) => {
   searchService.getHotSpot()
     .then(response => res.json(response))
 })
