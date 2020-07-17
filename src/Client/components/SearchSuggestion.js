@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import services from '../../Services/Services'
-import Axios from 'axios'
-// import './searchSuggestion.css'
 
 const SearchSuggestion = () => {
 

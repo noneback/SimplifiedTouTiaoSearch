@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import services from '../../Services/Services'
-// import './HotSpots.css'
 
 const HotSpots = () => {
     const [hotSpots, setHotSpots] = useState([])
@@ -17,7 +16,6 @@ const HotSpots = () => {
     return (
         <>
             <div className='update_time'><span>更新时间:{updateTime}</span></div>
-            {/* <div style={{ width: '60%', textAlign: 'center', margin: '0 auto' }}><h1>今日热搜</h1></div> */}
             <div id="hotspots_container" className='grid_display'>
                 {
 

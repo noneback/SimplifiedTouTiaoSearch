@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode=development && nodemon --exec babel-node src/Server/server.js",
+    "dev": "webpack -p --mode=development && nodemon --exec babel-node src/Server/server.js",
     "webpack": "webpack -wd",
     "build": "webpack --mode=development",
     "analyze": "webpack --config webpack.config.js --progress",
@@ -36,9 +36,12 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "babel-plugin-import": "^1.13.0",
     "css-loader": "^3.6.0",
+    "html-webpack-plugin": "^4.3.0",
     "isomorphic-style-loader": "^5.1.0",
     "style-loader": "^1.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.43.0",
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.12"

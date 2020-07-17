@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-// import 'antd/dist/antd.css'
-// import '../index.css'
 import Searchs from './Search'
 import HotSpots from './HotSpots'
 import { Tabs } from 'antd'

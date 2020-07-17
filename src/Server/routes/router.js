@@ -1,70 +1,36 @@
 import express from "express";
-import hbs from "handlebars";
 import searchService from '../../Services/Search'
 
 const router = express.Router();
 
-router.get("/test", async (req, res) => {
-  const theHtml = `
-  <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"
-  />
-
-    <title>Test</title>
-  </head>
-  <body>
-    <div id="container" style="margin:0 auto">{{{reactele}}}</div>
-    <script src="/app.js" charset="utf-8"></script>
-    <script src="/vendor.js" charset="utf-8"></script>
-    <script src="/css.js" charset="utf-8"></script>
-    <footer>      Copyright © 2013-2020    </footer>
-  </body>
-  
-</html>
-`
-  const hbsTemplate = hbs.compile(theHtml);
-  const reactComp = ''
-  // renderToString(<IndexPage />);
-  const htmlToSend = hbsTemplate({ reactele: reactComp });
-  res.send(htmlToSend)
+router.get("/", async (req, res) => {
+  res.redirect(200, '/index.html')
 });
 
 router.get("/result/keyword=:keyword&offset=:offset", async (req, res) => {
-  // keyword=:keyword&offset=:offset
-  const keyword = req.params.keyword
-  const theHtml = `
-  <!DOCTYPE html>
+  const resultHtml = `  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"
-  />
-
-    <title>Document</title>
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>头条搜索</title>
   </head>
   <body>
-
-    <div id="container" style="margin:0 auto">{{{reactele}}}</div>
-    <script src="/result.js" charset="utf-8"></script>
-    <script src="/vendor.js" charset="utf-8"></script>
-    <script src="/css.js" charset="utf-8"></script>
-    <footer>      Copyright © 2013-2020    </footer>
+    <div id="container"></div>
+    <script src="/js/vendors~css.bundle.js?801c25476c1bae43c41e"></script>
+    <script src="/js/css.bundle.js?801c25476c1bae43c41e"></script>
+    <script src="/js/vendors~app~result~vendor.bundle.js?801c25476c1bae43c41e"></script>
+    <script src="/js/vendors~app~result.bundle.js?801c25476c1bae43c41e"></script>
+    <script src="/js/vendors~result.bundle.js?801c25476c1bae43c41e"></script>
+    <script src="/js/result.bundle.js?801c25476c1bae43c41e"></script>
   </body>
- 
-</html>
-`
-  const hbsTemplate = hbs.compile(theHtml);
-  const reactComp = ''
-  // renderToString(<ResultsPage input={keyword} />);
-  const htmlToSend = hbsTemplate({ reactele: reactComp });
-  res.send(htmlToSend)
+</html>`
+
+  res.send(resultHtml.toString())
+
 });
 
 
@@ -83,12 +49,10 @@ router.get('/api/suggest_words/:keyword', async (req, res) => {
 router.get('/api/entries/:keyword&:offset', async (req, res) => {
   const keyword = (req.params.keyword)
   const offset = (req.params.offset)
-  // console.log('key-off', keyword, offset)
 
   searchService.getEntries(encodeURI(keyword), offset)
     .then(response => {
       res.json(response)
-      // console.log(response)
     }).catch(err => console.log('error'))
 })
 
@@ -97,6 +61,5 @@ router.get('/api/hot_spots_info', async (req, res) => {
     .then(response => res.json(response))
 })
 
-// app.get(/)
 
 export default router;

@@ -1,30 +1,31 @@
 import React, { useState, useEffect } from 'react'
-// import 'antd/dist/antd.css'
-// import '../index.css'
 import { AutoComplete, Input, Button } from 'antd'
-import { SearchOutlined } from '@ant-design/icons'
 import services from '../../Services/Services'
 
 const Searchs = ({ input, clicked, keyword, setKeyword }) => {
     const [options, setOptions] = useState([])
     useEffect(() => { !input ? null : setKeyword(input) }, [])
 
+    function debounce(fun, delay) {
+        return function (args) {
+            let that = this
+            let _args = args
+            clearTimeout(fun.id)
+            fun.id = setTimeout(function () {
+                fun.call(that, _args)
+            }, delay)
+        }
+    }
 
     const handleSearch = async keyword_ => {
-        setKeyword(keyword_)
         services.getSuggestedWords(keyword_)
             .then(sugs => setOptions(sugs))
             .catch(error => { console.log('error') })
     }
 
-    const handleKeyPress = ev => {
-        // console.log(ev.target.value)
-        // sessionStorage.setItem('keyword',ev.target.value)
-    }
 
     const onSelect = value => {
         setKeyword(value)
-        sessionStorage.setItem('keyword', value)
     }
 
     const onChange = e => {
@@ -44,7 +45,7 @@ const Searchs = ({ input, clicked, keyword, setKeyword }) => {
                     }}
                     backfill={false}
                     onSelect={onSelect}
-                    onSearch={handleSearch}
+                    onSearch={debounce(handleSearch, 500)}
                     value={keyword}
                 >
                     <Input
@@ -54,17 +55,15 @@ const Searchs = ({ input, clicked, keyword, setKeyword }) => {
                             height: 42
                         }}
                         onChange={onChange}
-                        onKeyPress={handleKeyPress}
                     />
                 </AutoComplete>
                 <Button
                     className='search_button'
                     type='primary'
-                    icon={<SearchOutlined />}
                     onClick={clicked}
                     size='large'
                 >
-                    Search
+                    搜索
                 </Button>
             </div>
         </div>

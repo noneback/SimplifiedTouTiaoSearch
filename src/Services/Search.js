@@ -10,12 +10,6 @@ const getEntries = (keyword, offset = 0) => {
 
 const getHotSpot = () => {
     const req = axios.get(`https://ib.snssdk.com/api/suggest_words/?business_id=10039`)
-    // return req.then(17
-    //     res => {
-    //         const hotSpots = res.data.data[0].words.map(spot => spot.word)
-    //         return hotSpots.slice(0, 10)
-    //     }
-    // )
     return req.then(
         res => {
             const hotSpots = res.data.data[0].words.map(spot =>
