@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Pagination } from 'antd';
 
-import Searchs from './Search';
+import Searchs from '../Components/Search';
 import services from '../../Services/Services'
 import SearchResultsDispaly from './SearchResultsDisplay'
 

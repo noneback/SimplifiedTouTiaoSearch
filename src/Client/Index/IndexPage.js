@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Tabs } from 'antd'
 
-import Searchs from './Search'
+import Searchs from '../Components/Search'
 import HotSpots from './HotSpots'
 import Bonus from '../Bonus/Bonus'
 import SearchSuggestion from './SearchSuggestion'

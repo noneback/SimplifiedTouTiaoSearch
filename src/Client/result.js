@@ -1,6 +1,6 @@
 import React from 'react'
 import { hydrate } from 'react-dom'
-import ResultsPage from './components/ResultsPage'
+import ResultsPage from './Result/ResultsPage'
 
 //解析url地址
 const paras = document.location.toString().split('=');
