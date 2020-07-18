@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import services from '../../Services/Services'
 
+/**
+ * 猜你想搜页面 展示相关词条
+ */
+
 const SearchSuggestion = () => {
 
-    const [searchSuggestion, setSearchSuggestion] = useState([])
+    const [searchSuggestion, setSearchSuggestion] = useState([]); //维护相关词条
 
     useEffect(() => {
-        services.getSearchSuggest().then(sugWords => setSearchSuggestion(sugWords))
-    }, [])
+        services.getSearchSuggest().then(sugWords => setSearchSuggestion(sugWords));
+    }, []);
 
 
 
@@ -33,4 +37,4 @@ const SearchSuggestion = () => {
 
 }
 
-export default SearchSuggestion
+export default SearchSuggestion;

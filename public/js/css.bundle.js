@@ -155,6 +155,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/Client/css/Bonus.css":
+/*!************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/Client/css/Bonus.css ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".bonus {\\n  position: fixed;\\n  width: 100%;\\n  height: 100%;\\n  left: 0;\\n  top: 0;\\n  transition: transform 1s, opacity 2.5s;\\n}\\n\\n.bonus .mid_container img {\\n  width: auto;\\n  height: auto;\\n  max-width: 90%;\\n  max-height: 90%;\\n  background-color: #fff;\\n  position: absolute;\\n  left: 0;\\n  right: 0;\\n  top: 0;\\n  bottom: 0;\\n  margin: auto;\\n  box-sizing: border-box;\\n  border-radius: 6px;\\n  padding: 0em;\\n}\\n\\n.bonus .mid_container #close {\\n  width: 30px;\\n  height: 30px;\\n  border-radius: 50%;\\n  position: absolute;\\n  right: 0px;\\n  top: 0px;\\n  border: 2px solid #fff;\\n  cursor: pointer;\\n  background-color: #008c8c;\\n  text-align: center;\\n  line-height: 30px;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/Client/css/Bonus.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/Client/css/Entry.css":
 /*!************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/Client/css/Entry.css ***!
@@ -188,14 +199,14 @@ eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../.
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/Client/css/mask.css":
-/*!***********************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/Client/css/mask.css ***!
-  \***********************************************************************/
+/***/ "./src/Client/css/Bonus.css":
+/*!**********************************!*\
+  !*** ./src/Client/css/Bonus.css ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".mask {\\n  position: fixed;\\n  width: 100%;\\n  height: 100%;\\n  left: 0;\\n  top: 0;\\n  transition: transform 1s, opacity 2.5s;\\n}\\n\\n.mask .mid_container img {\\n  width: auto;\\n  height: auto;\\n  max-width: 90%;\\n  max-height: 90%;\\n  background-color: #fff;\\n  position: absolute;\\n  left: 0;\\n  right: 0;\\n  top: 0;\\n  bottom: 0;\\n  margin: auto;\\n  box-sizing: border-box;\\n  border-radius: 6px;\\n  padding: 0em;\\n}\\n\\n.mask .mid_container #close {\\n  width: 30px;\\n  height: 30px;\\n  border-radius: 50%;\\n  position: absolute;\\n  right: 0px;\\n  top: 0px;\\n  border: 2px solid #fff;\\n  cursor: pointer;\\n  background-color: #008c8c;\\n  text-align: center;\\n  line-height: 30px;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/Client/css/mask.css?./node_modules/css-loader/dist/cjs.js");
+eval("var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!./Bonus.css */ \"./node_modules/css-loader/dist/cjs.js!./src/Client/css/Bonus.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/Client/css/Bonus.css?");
 
 /***/ }),
 
@@ -232,25 +243,14 @@ eval("var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/
 
 /***/ }),
 
-/***/ "./src/Client/css/mask.css":
-/*!*********************************!*\
-  !*** ./src/Client/css/mask.css ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!./mask.css */ \"./node_modules/css-loader/dist/cjs.js!./src/Client/css/mask.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/Client/css/mask.css?");
-
-/***/ }),
-
 /***/ 2:
-/*!*****************************************************************************************************************************************************************!*\
-  !*** multi ./node_modules/antd/dist/antd.min.css ./src/Client/css/Entry.css ./src/Client/css/index.css ./src/Client/css/HotSpots.css ./src/Client/css/mask.css ***!
-  \*****************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************!*\
+  !*** multi ./node_modules/antd/dist/antd.min.css ./src/Client/css/Entry.css ./src/Client/css/index.css ./src/Client/css/HotSpots.css ./src/Client/css/Bonus.css ***!
+  \******************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./node_modules/antd/dist/antd.min.css */\"./node_modules/antd/dist/antd.min.css\");\n__webpack_require__(/*! ./src/Client/css/Entry.css */\"./src/Client/css/Entry.css\");\n__webpack_require__(/*! ./src/Client/css/index.css */\"./src/Client/css/index.css\");\n__webpack_require__(/*! ./src/Client/css/HotSpots.css */\"./src/Client/css/HotSpots.css\");\nmodule.exports = __webpack_require__(/*! ./src/Client/css/mask.css */\"./src/Client/css/mask.css\");\n\n\n//# sourceURL=webpack:///multi_./node_modules/antd/dist/antd.min.css_./src/Client/css/Entry.css_./src/Client/css/index.css_./src/Client/css/HotSpots.css_./src/Client/css/mask.css?");
+eval("__webpack_require__(/*! ./node_modules/antd/dist/antd.min.css */\"./node_modules/antd/dist/antd.min.css\");\n__webpack_require__(/*! ./src/Client/css/Entry.css */\"./src/Client/css/Entry.css\");\n__webpack_require__(/*! ./src/Client/css/index.css */\"./src/Client/css/index.css\");\n__webpack_require__(/*! ./src/Client/css/HotSpots.css */\"./src/Client/css/HotSpots.css\");\nmodule.exports = __webpack_require__(/*! ./src/Client/css/Bonus.css */\"./src/Client/css/Bonus.css\");\n\n\n//# sourceURL=webpack:///multi_./node_modules/antd/dist/antd.min.css_./src/Client/css/Entry.css_./src/Client/css/index.css_./src/Client/css/HotSpots.css_./src/Client/css/Bonus.css?");
 
 /***/ })
 

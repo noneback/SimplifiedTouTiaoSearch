@@ -8,7 +8,7 @@ import React from 'react'
 
 
 const Entry = ({ data }) => {
-  
+
   return (
     <div className='entry'>
       <a href={data.link_url}>
@@ -26,4 +26,4 @@ const Entry = ({ data }) => {
   )
 }
 
-export default Entry
+export default Entry;

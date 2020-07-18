@@ -1,4 +1,4 @@
-.mask {
+.bonus {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -7,7 +7,7 @@
   transition: transform 1s, opacity 2.5s;
 }
 
-.mask .mid_container img {
+.bonus .mid_container img {
   width: auto;
   height: auto;
   max-width: 90%;
@@ -24,7 +24,7 @@
   padding: 0em;
 }
 
-.mask .mid_container #close {
+.bonus .mid_container #close {
   width: 30px;
   height: 30px;
   border-radius: 50%;

@@ -8,14 +8,14 @@ import services from '../../Services/Services'
 
 const HotSpots = () => {
 
-    const [hotSpots, setHotSpots] = useState([]) // 维护从后端取得的hotSpots数据 
-    const [updateTime, setUpdateTime] = useState([]) // 维护从后端取得的update时间 
+    const [hotSpots, setHotSpots] = useState([]);// 维护从后端取得的hotSpots数据 
+    const [updateTime, setUpdateTime] = useState([]); // 维护从后端取得的update时间 
 
     /*初始化hotSpots,和updateTime，仅在界面初始化时进行一次 */
     useEffect(() => {
         services.getHotSpot().then(hotSpotsInfo => {
-            setHotSpots(hotSpotsInfo.data)
-            setUpdateTime(hotSpotsInfo.update_time)
+            setHotSpots(hotSpotsInfo.data);
+            setUpdateTime(hotSpotsInfo.update_time);
         })
     }, [])
 
@@ -49,4 +49,4 @@ const HotSpots = () => {
     )
 }
 
-export default HotSpots
+export default HotSpots;
