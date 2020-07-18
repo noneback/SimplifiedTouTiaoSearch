@@ -8,7 +8,7 @@ const config = {
     entry: {
         vendor: ["@babel/polyfill", "react"],
         app: ["./src/Client/index.js"],
-        css: ["./node_modules/antd/dist/antd.min.css", "./src/Client/css/Entry.css", "./src/Client/css/index.css", "./src/Client/css/HotSpots.css"],
+        css: ["./node_modules/antd/dist/antd.min.css", "./src/Client/css/Entry.css", "./src/Client/css/index.css", "./src/Client/css/HotSpots.css","./src/Client/css/mask.css"],
         result: ["./src/Client/result.js"]
 
     },

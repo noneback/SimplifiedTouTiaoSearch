@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import services from '../../Services/Services'
 
+/**
+ * 头条热点组件，展示今日热搜词，热度，更新时间
+ * 
+ */
+
 const HotSpots = () => {
-    const [hotSpots, setHotSpots] = useState([])
-    const [updateTime, setUpdateTime] = useState([])
+
+    const [hotSpots, setHotSpots] = useState([]) // 维护从后端取得的hotSpots数据 
+    const [updateTime, setUpdateTime] = useState([]) // 维护从后端取得的update时间 
+
+    /*初始化hotSpots,和updateTime，仅在界面初始化时进行一次 */
     useEffect(() => {
         services.getHotSpot().then(hotSpotsInfo => {
             setHotSpots(hotSpotsInfo.data)
@@ -11,7 +19,11 @@ const HotSpots = () => {
         })
     }, [])
 
-    const onClick = (hotSpot) => window.open(`/result/keyword=${hotSpot}&offset=0`, '_self');
+    /**
+     * 点击时热点词条时调用，跳转页面
+     * @param {string} hotSpot 热点词
+     */
+    const handleClick = (hotSpot) => window.open(`/result/keyword=${hotSpot}&offset=0`, '_self');
 
     return (
         <>
@@ -21,7 +33,7 @@ const HotSpots = () => {
 
                     hotSpots.map(hotSpot => {
                         return (
-                            <h3 key={hotSpot.word} onClick={() => onClick(hotSpot.word)}>
+                            <h3 key={hotSpot.word} onClick={() => handleClick(hotSpot.word)}>
                                 <span className={hotSpots.indexOf(hotSpot) < 3 ? 'hot_top3' : 'hot_rank'}>
                                     {hotSpots.indexOf(hotSpot) + 1}
                                 </span>

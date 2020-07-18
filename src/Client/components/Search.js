@@ -18,9 +18,11 @@ const Searchs = ({ input, clicked, keyword, setKeyword }) => {
     }
 
     const handleSearch = async keyword_ => {
-        services.getSuggestedWords(keyword_)
-            .then(sugs => setOptions(sugs))
-            .catch(error => { console.log('error') })
+        if (keyword) {
+            services.getSuggestedWords(keyword_)
+                .then(sugs => setOptions(sugs))
+                .catch(error => { console.log('error') })
+        }
     }
 
 

@@ -1,0 +1,39 @@
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: transform 1s, opacity 2.5s;
+}
+
+.mask .mid_container img {
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 0em;
+}
+
+.mask .mid_container #close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  background-color: #008c8c;
+  text-align: center;
+  line-height: 30px;
+}

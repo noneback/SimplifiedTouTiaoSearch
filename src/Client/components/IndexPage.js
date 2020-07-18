@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { Tabs } from 'antd'
 import Searchs from './Search'
 import HotSpots from './HotSpots'
-import { Tabs } from 'antd'
+import Mask from '../Bonus/Mask'
 import SearchSuggestion from './SearchSuggestion'
+import Trigger from '../Bonus/Trigger'
 
 
 
@@ -12,15 +14,23 @@ const IndexPage = ({ input }) => {
 
     const [keyword, setKeyword] = useState('')
 
+    const [maskControler, setMaskControler] = useState(false)
+
     const clicked = () => {
-        window.open(`/result/keyword=${keyword}&offset=0`, '_self');
+        console.log(Trigger.isTrigger(keyword))
+        if (!Trigger.isTrigger(keyword)) {
+            window.open(`/result/keyword=${keyword}&offset=0`, '_self');
+        } else {
+            setMaskControler(true)
+        }
+
     }
 
     return (
         <div>
-        <br></br>
-        <br></br>
-        <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <Searchs clicked={clicked} setKeyword={setKeyword} keyword={keyword} input={input}></Searchs>
             {/* <HotSpots></HotSpots> */}
             <div className='tabs'>
@@ -33,7 +43,7 @@ const IndexPage = ({ input }) => {
                     </TabPane>
                 </Tabs>
             </div>
-
+            <Mask keyword={keyword} controler={maskControler} setControler={setMaskControler}></Mask>
         </div >
     )
 }

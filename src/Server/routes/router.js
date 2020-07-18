@@ -42,8 +42,9 @@ router.get('/api/search_suggestion', async (req, res) => {
 router.get('/api/suggest_words/:keyword', async (req, res) => {
   const keyword = req.params.keyword
 
-  searchService.getSuggestedWords(keyword)
+  searchService.getSuggestedWords(encodeURI(keyword))
     .then(response => res.json(response))
+    .catch(e => console.log('suggest error:', keyword))
 })
 
 router.get('/api/entries/:keyword&:offset', async (req, res) => {
