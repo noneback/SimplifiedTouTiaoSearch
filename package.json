@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node src/Server/server.js",
     "dev": "webpack -p --mode=development && nodemon --exec babel-node src/Server/server.js",
-    "webpack": "webpack -wd",
     "build": "webpack --mode=development",
-    "analyze": "webpack --config webpack.config.js --progress",
     "backend": "nodemon --exec babel-node src/Server/server.js"
   },
   "author": "noneback",
