@@ -1,5 +1,4 @@
 const path = require("path");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -60,7 +59,6 @@ const config = {
 
     },
     plugins: [
-        // new BundleAnalyzerPlugin(),
         new HtmlWebpackPlugin({ // home页面
             title: 'index',
             filename: './index.html',

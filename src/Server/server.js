@@ -1,10 +1,14 @@
 import express from "express";
 import compression from "compression";
-import router from "./routes/router";
 import cors from 'cors'
 import morgan from 'morgan'
 
+import router from "./routes/router";
+import logger from './utils/logger'
+
 const app = express();
+
+/**使用的中间件 */
 app.use(morgan('method   : :method\n url     : :url \nstatus   : :status \nresponse : :res[content-length] - :response-time ms\n'))
 app.use(compression());
 app.use(express.static("public"));
@@ -14,5 +18,5 @@ app.use("/", router);
 
 const port = process.env.PORT || 3002;
 app.listen(port, function listenHandler() {
-    console.info(`Running on ${port}...`);
+    logger.info(`Running on ${port}`)
 });

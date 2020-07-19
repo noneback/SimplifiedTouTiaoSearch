@@ -1,3 +1,7 @@
+/**
+ * 日志模块 便于后端调试
+ */
+
 const info = (...params) => {
     console.log(...params)
 }

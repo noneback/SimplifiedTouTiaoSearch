@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Pagination } from 'antd';
+import { Pagination, Tabs } from 'antd';
 
 import Searchs from '../Components/Search';
 import services from '../../Services/Services'
@@ -15,6 +15,8 @@ import SearchResultsDispaly from './SearchResultsDisplay'
  */
 
 const ResultsPage = ({ keyword_, offset_ }) => {
+  const { TabPane } = Tabs;
+
   const [keyword, setKeyword] = useState(keyword_) //维护搜索框输入的keyword
   const [results, setResults] = useState([]) //搜索结果,10个Entry
   const [total, setTotal] = useState(0) //维护搜索结果总条数 
@@ -50,10 +52,24 @@ const ResultsPage = ({ keyword_, offset_ }) => {
   return (
     <>
       <div id='search_component'>
-        <Searchs keyword_={keyword_} keyword={keyword} clicked={clicked} setKeyword={setKeyword}>
-        </Searchs>
-        <SearchResultsDispaly results={results} total={total}></SearchResultsDispaly>
+        <div className='tabs'>
+          <Searchs keyword_={keyword_} keyword={keyword} clicked={clicked} setKeyword={setKeyword}></Searchs>
+          <Tabs defaultActiveKey="1">
+            <TabPane tab="综合" key="1">
+              <SearchResultsDispaly results={results} total={total}></SearchResultsDispaly>
+            </TabPane>
+            <TabPane tab="视频" key="2">
+              <h1>视频搜索内容</h1>
+              <h2>由于并未提供api，故相关搜索结果未展示，仅占位</h2>
+            </TabPane>
+            <TabPane tab="图片" key="3">
+              <h1>图片搜索内容</h1>
+              <h2>由于并未提供api，故相关搜索结果未展示，仅占位</h2>
+            </TabPane>
+          </Tabs>
+        </div>
         <Pagination showQuickJumper current={Math.floor(offset_ / 10 + 1)} total={total} onChange={valueChange} pageSize={10} showSizeChanger={false} responsive={true} />
+
       </div>
 
     </>
