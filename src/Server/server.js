@@ -2,6 +2,7 @@ import express from "express";
 import compression from "compression";
 import cors from 'cors'
 import morgan from 'morgan'
+import timeout from 'connect-timeout'
 
 import router from "./routes/router";
 import logger from './utils/logger'
@@ -13,7 +14,7 @@ app.use(morgan('method   : :method\n url     : :url \nstatus   : :status \nrespo
 app.use(compression());
 app.use(express.static("public"));
 app.use(cors())
-
+app.use(timeout(5000))
 app.use("/", router);
 
 const port = process.env.PORT || 3002;
