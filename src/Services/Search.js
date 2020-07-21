@@ -44,6 +44,7 @@ const getHotSpot = () => {
  * @returns {Array<T>} 推荐词数组
  */
 const getSuggestedWords = (keyword) => {
+
     const req = axios.get(`${baseUrl}search/api/sug/?keyword=${keyword}`)
     return req.then(
         res => {

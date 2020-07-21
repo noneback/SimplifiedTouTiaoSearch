@@ -17,11 +17,12 @@ const Entry = ({ data }) => {
       <p
         style={{ fontSize: '14px' }}
       >
-        {data.description}
+        {'  '+data.description}
       </p>
       <span className="entry_url">
         <p>{data.link_url}</p>
       </span>
+      <br></br>
     </div>
   )
 }

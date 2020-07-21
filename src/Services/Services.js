@@ -24,7 +24,9 @@ const getHotSpot = () => axios.get(`/api/hot_spots_info`).then((res => res.data)
  * @returns {Array<T>} 候选推荐词数组
  */
 const getSuggestedWords = keyword =>
-    axios.get(`/api/suggest_words/${keyword}`).then(res => !keyword ? [] : res.data)
+    axios.get(`/api/suggest_words/${keyword}`)
+        .then(res => !keyword ? [] : res.data)
+        .catch(e => [])
 
 
 /**

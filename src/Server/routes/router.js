@@ -50,10 +50,14 @@ router.get('/api/search_suggestion', async (req, res) => {
 /** 获取 候选推荐词  */
 router.get('/api/suggest_words/:keyword', async (req, res) => {
   const keyword = req.params.keyword;
+  if (!keyword) console.log('api:sug:keyword is false')
 
   searchService.getSuggestedWords(encodeURI(keyword))
     .then(response => res.json(response))
-    .catch(error => logger.error(`error: /api/suggest_words/:keyword\n status: ${res.statusCode}\n`));
+    .catch(error => {
+      logger.error(`error: /api/suggest_words/:keyword\n status: ${res.statusCode}\n`);
+      res.status(404);
+    });
 })
 
 /** 获取 搜索词条 */

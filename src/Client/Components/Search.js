@@ -36,21 +36,21 @@ const Searchs = ({ input, clicked, keyword, setKeyword }) => {
     }
 
 
-    const handleSearch = async keyword_ => {
+    const handleSearch = keyword_ => {
         if (keyword) {
-            await services.getSuggestedWords(keyword_)
+            services.getSuggestedWords(keyword_)
                 .then(sugs => setOptions(sugs))
-                .catch(error => { console.log('handleSearch:error') });
+                .catch(error => console.log('handleSearch:error'));
         }
     }
 
 
     /* 一些回调函数 */
-    const onSelect = value => {
+    const Selected = value => {
         setKeyword(value)
     }
 
-    const onChange = e => {
+    const valueChanged = e => {
         setKeyword(e.target.value)
     }
 
@@ -66,17 +66,18 @@ const Searchs = ({ input, clicked, keyword, setKeyword }) => {
                         width: '60%'
                     }}
                     backfill={false}
-                    onSelect={onSelect}
-                    onSearch={debounce(handleSearch, 500)}
+                    onSelect={Selected}
+                    onSearch={debounce(handleSearch, 200)}
                     value={keyword}
                 >
                     <Input
                         placeholder='输入关键字'
                         className='custom'
+                        onPressEnter={clicked}
                         style={{
                             height: 40
                         }}
-                        onChange={onChange}
+                        onChange={valueChanged}
                     />
                 </AutoComplete>
                 <Button
