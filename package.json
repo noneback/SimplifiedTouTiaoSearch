@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node src/Server/server.js",
-    "dev": "webpack -p --mode=development && nodemon --exec babel-node src/Server/server.js",
+    "start": "node ./index.js",
+    "build":"webpack --mode=development --config ./webpack.client.js --progress && webpack --mode=development --config ./webpack.server.js --progress",
     "build:client": "webpack --mode=development --config ./webpack.client.js --progress",
-    "build:server": "webpack --mode=development --config ./webpack.server.js --progress",
-    "backend": "nodemon --exec webpack --mode=development --config ./webpack.server.js --progress && node index.js"
+    "build:server": "webpack --mode=development --config ./webpack.server.js --progress"
   },
   "author": "noneback",
   "license": "ISC",
