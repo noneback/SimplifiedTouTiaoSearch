@@ -16,7 +16,7 @@ const SearchSuggestion = () => {
 
 
     const onClick = (sugWord) => {
-        window.open(`/result/keyword=${sugWord}&offset=0`, '_self');
+        window.open(`/keyword=${sugWord}&offset=0`, '_self');
     }
 
     return (

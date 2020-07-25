@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import services from '../../Services/Services'
+import "../css/HotSpots.css"
 
 /**
  * 头条热点组件，展示今日热搜词，热度，更新时间
@@ -23,7 +24,7 @@ const HotSpots = () => {
      * 点击时热点词条时调用，跳转页面
      * @param {string} hotSpot 热点词
      */
-    const handleClick = (hotSpot) => window.open(`/result/keyword=${hotSpot}&offset=0`, '_self');
+    const handleClick = (hotSpot) => window.open(`/keyword=${hotSpot}&offset=0`, '_self');
 
     return (
         <>

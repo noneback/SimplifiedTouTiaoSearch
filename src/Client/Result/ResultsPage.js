@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Pagination, Tabs } from 'antd';
+import "../css/index.css"
 
 import Searchs from '../Components/Search';
 import services from '../../Services/Services'
@@ -41,38 +42,38 @@ const ResultsPage = ({ keyword_, offset_ }) => {
 
   useEffect(() => initialize(), []); //页面加载时初始化
 
-  const clicked = () => window.open(`/result/keyword=${keyword}&offset=0`, '_self'); //搜索按钮点击跳转
+  const clicked = () => window.open(`/keyword=${keyword}&offset=0`, '_self'); //搜索按钮点击跳转
 
   const valueChange = (pageNumber) => {
     // 搜索框onChange回调
     setPage(pageNumber);
-    window.open(`/result/keyword=${keyword}&offset=${(pageNumber - 1) * 10}`, '_self');
+    window.open(`/keyword=${keyword}&offset=${(pageNumber - 1) * 10}`, '_self');
   }
 
   return (
-    <>
-      <div id='search_component'>
-        <div className='tabs'>
-          <Searchs keyword_={keyword_} keyword={keyword} clicked={clicked} setKeyword={setKeyword}></Searchs>
+
+    <div id='search_component'>
+      <div className='tabs'>
+        <Searchs keyword_={keyword_} keyword={keyword} clicked={clicked} setKeyword={setKeyword}></Searchs> 
           <Tabs defaultActiveKey="1">
-            <TabPane tab="综合" key="1">
-              <SearchResultsDispaly results={results} total={total}></SearchResultsDispaly>
-            </TabPane>
-            <TabPane tab="视频" key="2">
-              <h1>视频搜索内容</h1>
-              <h2>由于并未提供api，故相关搜索结果未展示，仅占位</h2>
-            </TabPane>
-            <TabPane tab="图片" key="3">
-              <h1>图片搜索内容</h1>
-              <h2>由于并未提供api，故相关搜索结果未展示，仅占位</h2>
-            </TabPane>
-          </Tabs>
-        </div>
-        <Pagination showQuickJumper current={Math.floor(offset_ / 10 + 1)} total={total} onChange={valueChange} pageSize={10} showSizeChanger={false} responsive={true} />
-
+          <TabPane tab="综合" key="1">
+            <SearchResultsDispaly results={results} total={total}></SearchResultsDispaly>
+          </TabPane>
+          <TabPane tab="视频" key="2">
+            <h1>视频搜索内容</h1>
+            <h2>由于并未提供api，故相关搜索结果未展示，仅占位</h2>
+          </TabPane>
+          <TabPane tab="图片" key="3">
+            <h1>图片搜索内容</h1>
+            <h2>由于并未提供api，故相关搜索结果未展示，仅占位</h2>
+          </TabPane>
+        </Tabs>
       </div>
+      <Pagination showQuickJumper current={Math.floor(offset_ / 10 + 1)} total={total} onChange={valueChange} pageSize={10} showSizeChanger={false} responsive={true} />
 
-    </>
+    </div>
+
+
   )
 }
 

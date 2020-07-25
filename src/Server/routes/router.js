@@ -1,42 +1,33 @@
 import express from "express";
 import searchService from '../../Services/Search'
 import logger from "../utils/logger";
+import { renderToString } from 'react-dom/server'
+import React from 'react'
+import IndexPage from '../../Client/Index/IndexPage'
+import ResultsPage from '../../Client/Result/ResultsPage'
+import fs from 'fs'
 
 const router = express.Router();
 
 /**获取 主页 */
 router.get("/", async (req, res) => {
-  res.redirect(200, '/index.html');
+  const index = renderToString(<div><IndexPage></IndexPage><footer>Copyright © 2020 NoneBack</footer></div>)
+  const template = fs.readFileSync('./public/app.html', 'utf-8')
+  console.log('index:', index)
+  const html = template.replace('<div id="container"></div>', `<div id="container">${index}</div>`)
+  res.send(html);
 });
 
 /** 结果页 */
-router.get("/result/keyword=:keyword&offset=:offset", async (req, res) => {
+router.get("/keyword=:keyword&offset=:offset", async (req, res) => {
 
-  const resultHtml =
-    `  <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-        />
-        <title>头条搜索</title>
-      </head>
-      <body>
-        <div id="container"></div>
-        <script src="/js/vendors~css.bundle.js?801c25476c1bae43c41e"></script>
-        <script src="/js/css.bundle.js?801c25476c1bae43c41e"></script>
-        <script src="/js/vendors~app~result~vendor.bundle.js?801c25476c1bae43c41e"></script>
-        <script src="/js/vendors~app~result.bundle.js?801c25476c1bae43c41e"></script>
-        <script src="/js/vendors~result.bundle.js?801c25476c1bae43c41e"></script>
-        <script src="/js/result.bundle.js?801c25476c1bae43c41e"></script>
-      </body>
-    </html>`
-
-  res.send(resultHtml.toString());
-
-});
+  const keyword = req.params.keyword
+  const offset = req.params.offset
+  const results = renderToString(<ResultsPage keyword_={decodeURI(keyword)} offset_={offset} />)
+  const template = fs.readFileSync('./public/result.html', 'utf-8')
+  const html = template.replace('<div id="container"></div>', `<div id="container">${results}</div>`)
+  res.send(html);
+})
 
 /** API */
 

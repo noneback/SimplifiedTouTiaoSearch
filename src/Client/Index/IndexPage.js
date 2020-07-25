@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Tabs } from 'antd'
+import "../css/index.css"
 
 import Searchs from '../Components/Search'
 import HotSpots from './HotSpots'
@@ -27,7 +28,7 @@ const IndexPage = () => {
     const clicked = () => {
         //Trigger是彩蛋触发模块，关键字触发
         if (!Trigger.isTrigger(keyword)) {
-            window.open(`/result/keyword=${keyword}&offset=0`, '_self');
+            window.open(`/keyword=${keyword}&offset=0`, '_self');
         } else {
             setBonusControler(true);
         }
@@ -35,7 +36,7 @@ const IndexPage = () => {
     }
 
     return (
-        <div>
+        <>
             <br></br>
             <br></br>
             <br></br>
@@ -51,7 +52,7 @@ const IndexPage = () => {
                 </Tabs>
             </div>
             <Bonus keyword={keyword} controler={bonusControler} setControler={setBonusControler}></Bonus>
-        </div >
+        </>
     )
 }
 

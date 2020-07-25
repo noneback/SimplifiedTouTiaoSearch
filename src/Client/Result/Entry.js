@@ -1,4 +1,5 @@
 import React from 'react'
+import "../css/Entry.css"
 /**
  * 展示单个词条的信息，包含title，description，link
  * 
@@ -17,7 +18,7 @@ const Entry = ({ data }) => {
       <p
         style={{ fontSize: '14px' }}
       >
-        {'  '+data.description}
+        {'  ' + data.description}
       </p>
       <span className="entry_url">
         <p>{data.link_url}</p>

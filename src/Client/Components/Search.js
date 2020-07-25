@@ -57,7 +57,7 @@ const Searchs = ({ input, clicked, keyword, setKeyword }) => {
     return (
         <div id='search_container'>
             <div id="logo" >
-                <img src="https://lf3-ttcdn-tos.pstatp.com/obj/card-system/HeadBar/dist_browser/images/logo.545e6c99.png" alt="logo" />
+                <img src="/img/logo.png" alt="logo" />
             </div>
             <div id='search_component'>
                 <AutoComplete

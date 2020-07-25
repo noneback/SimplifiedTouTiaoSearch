@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"babel-node src/Server/server.js",
+    "start": "babel-node src/Server/server.js",
     "dev": "webpack -p --mode=development && nodemon --exec babel-node src/Server/server.js",
-    "build": "webpack --mode=development",
-    "backend": "nodemon --exec babel-node src/Server/server.js"
+    "build:client": "webpack --mode=development --config ./webpack.client.js --progress",
+    "build:server": "webpack --mode=development --config ./webpack.server.js --progress",
+    "backend": "nodemon --exec webpack --mode=development --config ./webpack.server.js --progress && node index.js"
   },
   "author": "noneback",
   "license": "ISC",
@@ -19,8 +20,12 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "handlebars": "^4.7.6",
+    "install": "^0.13.0",
+    "less": "^3.12.2",
+    "less-loader": "^6.2.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
+    "postcss-loader": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -36,8 +41,10 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-import": "^1.13.0",
     "css-loader": "^3.6.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^4.3.0",
     "isomorphic-style-loader": "^5.1.0",
+    "style-ext-html-webpack-plugin": "^4.1.2",
     "style-loader": "^1.2.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.43.0",
